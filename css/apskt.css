@@ -1,0 +1,477 @@
+/*
+*author:finch;
+*time:2017.9.3;
+*/
+
+
+/*样式清零列表*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*main.css*/
+html,body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.content-box li {
+	width: 20%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	/*border-left: 1px solid #000;*/
+}
+
+.content-box {
+	width: 500%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+ol {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+ol li {
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	color: #000;
+	background: #fff;
+	border-radius: 4px;
+	text-align: center;
+	padding: 0 7px;
+	float: left;
+	border-left: 1px solid #000;
+	cursor: pointer;
+}
+
+.onePage {
+	font-size: 140px;
+	text-align: center;
+}
+
+#one_title {
+	position: relative;
+	margin-top: 10%;
+	z-index: 999;
+}
+.one_title {
+	animation:word 1s linear 0s forwards; 
+}
+
+@keyframes word{
+	0% {
+		/*transform:  scale(1.1);*/
+		transform: rotate(-5deg);
+	}
+
+	50% {
+		/*transform: skewX(180deg) scale(1.5);*/
+		transform: rotate(5deg);
+	}
+	100% {
+		/*transform: skewX(180deg) scale(1.5);*/
+		transform: rotate(0deg);
+	}
+}
+
+.one_title2 {
+	position: relative;
+	font-size: 50px;
+	padding-top: 30px;
+	padding-left: 40%;
+	z-index: 9999;
+}
+
+.one_box {
+	height: 120px;
+	width: 80px;
+	margin: 0 auto;
+	position: relative;
+	bottom: -300px;
+	left: 690px;
+	margin-left: -40px;
+	background: url('../images/img4.png') repeat-x left top; 
+}
+
+.two_box {
+	width: 4000px;
+	height: 200px;
+	position: relative;
+	bottom: 50px;
+	left: 0;
+	background: url('../images/img5.png') no-repeat center bottom;
+	border-bottom:3px solid #000; 
+}
+
+#step{
+	color: #000;
+	width: 100px;
+	font-size: 24px;
+	height: 50px;
+	position: absolute;
+	left: 20px;
+	bottom: 0;
+}
+
+.earth {
+	width: 300px;
+	height: 300px;
+	background:#ddd;
+	position: absolute;
+	top:120px;
+	left: -110px;
+	border-radius: 50%;
+	display: none;
+	animation:circling 3s linear 0s infinite;  
+	background: url('../images/img6.png') no-repeat center center;
+}
+
+@keyframes circling{  
+  from{  
+    transform:rotate(0deg);  
+  }  
+  to{  
+    transform:rotate(-360deg);  
+  }  
+}  
+
+#fly {
+	display: none;
+}
+.fly {
+	position: absolute;
+	/*left: 0;*/
+	animation:fly 3s linear 0s forwards; 
+}
+@keyframes fly{  
+  from{  
+  	opacity: 1;
+   transform: rotate(0deg) translate(-300px,-200px) scale(0.5);  
+  }  
+  to{  
+  	opacity: 0.4;
+    transform: rotate(-10deg) translate(500px,150px) scale(1);
+  }  
+}  
+
+.lang-box {
+	position: absolute;
+	left: 665px;
+	top: 190px;
+}
+
+.lang {
+	width: 10px;
+	font-size: 17px;
+	height: 10px;
+	background: #000;
+	float: left;
+	margin-left: 82px;
+}
+
+.lang span {
+	position: relative;
+	top: 25px;
+	left: -7px;
+	font-weight: 600;
+}
+
+.lang p {
+	width: 450px;
+	height: 50px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	position: relative;
+	top: -140px;
+	font-weight: 100!important;
+	left: -140px;
+	font-size: 13px;
+	line-height: 25px;
+	box-shadow: 1px 2px 3px #000;
+}
+
+#box1 {
+	opacity: 0;
+}
+
+#box2 {
+	opacity: 0;
+}
+#box2 p{
+	width: 450px;
+	height: 25px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	position: relative;
+	top: -120px;
+	font-weight: 100!important;
+	left: -140px;
+	font-size: 13px;
+	line-height: 25px;
+	box-shadow: 1px 2px 3px #000;
+}
+
+#box3 {
+	background: #fff;
+	font-size: 13px;
+	line-height: 17px;
+}
+.lang img{
+	position: relative;
+	top: -130px!important;
+	left: 0;
+}
+
+.text{
+	width: 200px;
+	display: block;
+	position: relative;
+	top:-280px;
+	left: -100px;
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.aswer {
+	width: auto;
+	position: relative;
+	left: 65px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	padding: 10px;
+	display: none;
+}
+
+.content-left {
+	width: 23%;
+	height: 100%;
+	background: #dae9ed;
+	padding: 15px;
+	float: left;
+	border-right: 1px solid #ddd;
+}
+.content-right {
+	width: 74%;
+	float: right;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.picbox {
+	height: 25%;
+}
+
+.pic {
+	width: 47%;
+	height: 100%;
+	border-radius: 50%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.pic img {
+	position: relative;
+	left: -50px;
+	top: 0;
+}
+.intro {
+	height: 73%;
+	margin-top: 2%;
+	padding: 20px;
+}
+
+.detail p {
+	font-size: 15px;
+	line-height: 35px;
+}
+
+.detail h1 {
+	padding-bottom: 10px;
+}
+.contact {
+	margin-top: 30px;
+}
+.contact p{
+	margin-top: 20px;
+}
+
+.scroll {
+	width: 8px;
+	height: 140px;
+	background: rgba(255,255,255,.3);
+	border:1px solid #000;
+	position: absolute;
+	right: 0;
+	top: 0;
+	/*box-shadow: 1px 2px 2px #000;*/
+	border-radius: 5px;
+}
+
+.about {
+	position: relative;
+}
+
+.innerbox {
+	width: 100%;
+	padding: 20px;
+}
+
+.backtop {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	right: 30px;
+	bottom: 70px;
+	cursor: pointer;
+	display: none;
+}
+
+.innerbox {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#skills {
+	width: 500px;
+	position: absolute;
+	left: 15%;
+	top: 10%;
+	
+}
+#frames {
+	width: 500px;
+	position: absolute;
+	left: 50%;
+	top:10%;
+}
+
+#angle {
+	position: absolute;
+	left: 20%;
+	top:50%;
+}
+
+#power {
+	position: absolute;
+	left: 50%;
+	top:40%;
+}
+
+.showtime {
+	position: relative;
+	left: 0;
+	top:0;
+}
+
+.intro-self {
+	position: relative;
+}
+
+.intro-self-box {
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+	top: 30%;
+}
+
+.intro-self-box p {
+	margin-top: 10px;
+}
+
+
+ img {vertical-align: top; }  /*取消图片底部3像素距离*/
+ .box {
+     width: 743px;
+     height: 450px;
+     margin: 100px auto;
+     position: relative;
+     overflow: hidden;
+ }
+ .box div span {
+	float: left;
+	margin-left: 10px;
+ }
+ .box div {
+     width: 1400%;
+     position: absolute;
+     left: 0;
+     top: 0;
+ }
+
+ .itemshow {
+ 	padding: 30px;
+ }
+
+.itemshow p{
+	margin-top: 10px;
+	padding-left: 30px;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.backtop {
+	font-size: 30px;
+	line-height: 40px;
+}

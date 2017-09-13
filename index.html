@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<script src="./lib/simpleInheritance.js"></script>
+	<script src="./lib/d3.js" charset="utf-8"></script>
+	<script src="./lib/sea.js"></script>
+	<script>
+		seajs.use('./js/screenScroll.js',function(ScreenScroll) {
+			var p = new ScreenScroll();
+
+		})
+	</script>
+	<style>
+	.axis path,
+	.axis line{
+	    fill: none;
+	    stroke: black;
+	    shape-rendering: crispEdges;
+	}
+	 
+	.axis text {
+	    font-family: sans-serif;
+	    font-size: 11px;
+	}
+	</style>
+</head>
+<link rel="stylesheet" id="css" href="./css/apskt.css">
+<body>
+	<ul id="content-box" class="content-box">
+		<li class="onePage">
+			<audio src="bgm.mp3" id="media" style="display: none;"></audio>
+			<div  id="fly" ><img src="./images/img7.png" alt=""></div>
+			<h1 id="one_title">Hello world!</h1>
+			<h2 class="one_title2">——Finch</h2>
+			<div class="two_box" id="backg">
+				<div class="lang-box" id="lang-box">
+					<div class="lang"><span>HTML</span></div>
+					<div class="lang"><span>css</span></div>
+					<div class="lang"><span>js</span></div>
+					<div class="lang"><span>ajax</span></div>
+					<div class="lang"  style="margin-left: 90px"><span>canvas</span></div>
+					<div class="lang" style="margin-left: 90px"><span>jquery</span></div>
+					<div class="lang"><span>angular</span></div>
+					<div class="lang"  style="margin-left: 90px"><span>react</span></div>
+					<div class="lang" id="box1"  style="margin-left: 490px;background: #fff"><p>When I pass by the mountain,the mountain does not speak <br>When I pass by the sea,the sea does not speak</p></div>
+					<div class="lang"  id="box2" style="margin-left: 590px;background: #fff"><p>Do not give up. Your dream is the greatest thing in the word</p></div>
+					<div class="lang"  id="box3" style="margin-left: 1090px"><span><img src="./images/img8.png" alt=""></span><div class="text">前边已经无路可走，还是早点回头吧，你还年轻</div></div>
+				</div>
+			</div>
+			<div class="one_box" id="small_person" style="top: -170px;">
+				<div class="aswer" id="aswer">也许吧</div>
+				<div class="earth" id="earth"></div>
+			</div>
+			<a href="javascript:;" id="step">PLAY</a>
+		</li>
+		<li class="about" id="about">
+			<div class="content-left">
+				<div class="picbox">
+					<div class="pic"><img width="250" src="./images/1.jpg"></div>
+				</div>
+				<div class="intro">
+					<div class="detail">
+						<h1>简介：</h1>
+						<p>- 苏 奋 强 (Finch)/男 /1995</p>
+						<p>- CAFUC /本 科 /计 算 机 科 学 与 技 术</p>
+						<p>- 毕 业 时 间 ： 2018 年</p>
+						<p>- 地址：gansu,China</p>
+						<p>- 英 语 水 平 ： 暂 无 （ 四 级 400）</p>
+						<p>- Github: <a href="https://github.com/Yooook" target="_blank">https://github.com/Yooook</a></p>
+						<p>- 技 术 博 客 ： <a href="http://blog.apskt.com/"  target="_blank" >http://blog.apskt.com/</a><br>(hexo+github， 发 布 原 创 文 章 90 篇 )</p>
+					</div>
+					<div class="contact">
+						<h1>联系方式：</h1>
+						<p>- 邮箱： 654672373@qq.com</p>
+					</div>
+				</div>
+			</div>
+			<div class="content-right" id="contentbox">
+				<div class="innerbox" id="innerbox">
+					<h1>项目经历:</h1>
+					<div class="itemshow">
+						<h2>电影查询App （ 日 常 学 习 ）</h2>
+						<p>- 人数：一个人做</p>
+						<p>- 实现方法：react native（Android平台）+ 豆瓣api</p>
+						<p>- 已实现功能：导航栏：Navigator组件，标签栏：react-native-tab-navigator组件，触摸高亮：TouchableHighlight组件，进度组件：ActivityIndicator组件，可以进行简单的电影排行的查看，以及电影详情查询，电影搜索等.</p>
+					</div>
+					<div class="itemshow">
+						<h2>快递签收App （ 商 业 ）</h2>
+						<p>- 人数：一个人做</p>
+						<p>- 实现方法：Ionic（Angular）+ 甲方接口</p>
+						<p>- 已实现功能：跨域方式实现用户登录，登录状态检测，扫描条形码获取运单信息，调用摄像头拍照并获取照片的based64编码。</p>
+						<p>- 项目进度：改进中，原因：由于采用跨域方式实现数据传递，jsonp默认采用get方式提交，数据量过大无法提交，同时对方服务器没有CORS的相关设置。</p>
+					</div>
+					<div class="itemshow">
+						<h2>基于互联网＋的教管辅助系统（ 创 新 项 目 ）</h2>
+						<p>- 人数：两个人做</p>
+						<p>- 实现方法：WeChat+php+mysql</p>
+						<p>- 实现功能：前期：我做了整个原型系统，从web功能实现到后台php的搭建，以及相关的mysql创建，实现了项目初期的运行。后期：我将该项目从web端转移到了微信端，做了微信内置浏览器的开发，处理了手势冲突，以及解决了手势拖拽和缩放功能，实现了canvas在微信端的，图片加载功能，橡皮擦功能，标记功能，导出图片功能，上传功能等等，还做了三级的listView，实现了canvas随着图片个数的动态加载和翻页，以及对数据做一些简单的数据可视化分析。</p>
+						<p>- 项目进度：在学校里一定范围内投入使用。</p>
+					</div>
+					<div class="itemshow">
+						<h2>“Our Story”App （ 日 常 学 习 ）</h2>
+						<p>- 人数：一个人做</p>
+						<p>- 实现方法：Ionic（Angular）</p>
+						<p>- 已实现功能：主要是用了Ionic相关的组件，Ionic Js ，Ionic Css 以及Ionic的延迟加载组件，swiper.js等，自己设计了各个界面，实现了下拉刷新，上拉加载，焦点图，图片延时加载，广告滚动等等，自己模拟了数据库的数据。</p>
+					</div>
+					<div class="itemshow">
+						<h2>政府会议系统（ 商 业 ）</h2>
+						<p>- 人数：两个人做</p>
+						<p>- 我实现的功能：基于web，canvas随图片个数动态加载，刷新，上下翻页，快速翻页，标记，标记打开关闭，擦除，保存标注笔迹功能等等，还有具体页面的设计和bootstrap的一些应用。</p>
+						<p>- 项目进度：已完成。</p>
+					</div>
+					<div class="itemshow">
+						<h2>气象管理系统（ 商 业 ）</h2>
+						<p>- 人数：两个人做</p>
+						<p>- 我实现的功能：整个前端的设计和功能实现，自己做了一些网页特效，处理了一些超长超多字段表单，还有电梯导航，幽灵按钮，模态框等等，主要界面设计和实现较多</p>
+						<p>- 项目进度：已完成。</p>
+					</div>
+					<div class="itemshow">
+						<h2>出国留学网前端部分（ 军 方 ）</h2>
+						<p>- 人数：一个人做</p>
+						<p>- 实现功能：所有界面设计和实现+ 兼容IE678（项目要求）</p>
+						<p>- 项目进度：已完成，获得好评。</p>
+					</div>
+					<div class="itemshow">
+						<h2>通信站前端部分（ 军 方 ）</h2>
+						<p>- 人数：两个人做</p>
+						<p>- 实现功能：所有界面设计和实现 + 兼容IE678（项目要求）</p>
+						<p>- 项目进度：已完成。</p>
+					</div>
+					<div class="itemshow">
+						<h2>自己学院官网（ 日 常 学 习 ）</h2>
+						<p>- 人数：两个人做</p>
+						<p>- 我实现的功能：网站首页设计与制作，为其他子页面奠定风格</p>
+					</div>
+					<div class="itemshow">
+						<h2>学校影视文化中心网站（日 常 学 习 ）</h2>
+						<p>- 人数：一个人做</p>
+						<p>- 实现功能：所有页面的设计与制作，响应式布局</p>
+					</div>	
+					<div class="itemshow">
+						<h2>大学生创新创业基地官网（ 注 ： 自 己 所 在 的 小 组 织 ）</h2>
+						<p>- 人数：一个人做</p>
+						<p>- 实现功能：最早做的第一个静态网站</p>
+						<p>- 项目进度：已完成。</p>
+					</div>
+					<div class="itemshow">
+						<h2>除 此 之 外 ， 还 做 过 微 信 图 灵 机 器 人 的 api 接 入 ， hexo+github 搭 建 博 客 ， 封 装 自 己 的
+JavaScript 框 架 ， Angular 实 现 过 todomvc， 做 过 web 版 五 子 棋 ， 读 过 几 本 JavaScript 相 关 的
+书 ， 迷 恋 原 生 javascript 的 实 现 ， 在 此 之 前 还 有 自 己 也 记 不 清 的 前 端 页 面 制 作 经 历 ， pc 端 ， 移 动
+端 ， 响 应 式 ， webApp 都 做 过 ， 学 习 ， 或 者 创 新 ， 没 有 其 他 目 的 。</h2>
+					</div>
+					<div class="itemshow"></div>
+				</div>
+				<div class="backtop" id="backtop">Top</div>
+			</div>
+			<div class="scroll" id="scroll"></div>
+		</li>
+		<li class="showtime">
+			<div id="skills"></div>
+			<div id="angle"></div>
+			<div id="frames"></div>
+			<div id="power"></div>
+		</li>
+		<li class="intro-self">
+			<div class="intro-self-box">
+				<p>- 当 过 体 育 委 员 （ 爱 好 锻 炼 ）</p>
+				<p>- 当 过 班 长 （ 后 来 由 于 学 习 精 力 不 够 ， 辞 职 了 ）</p>
+				<p>- 当 过 学 校 的 计 算 机 协 会 会 长 （ 老 了 ， 换 新 的 了 ）</p>
+				<p>- 现 任 大 学 生 创 新 创 业 基 地 技 术 员 （ 这 才 是 真 爱 ）</p>
+				<p>- 参 加 过 学 校 三 届 的 网 页 设 计 大 赛 （ 一 个 一 等 ， 两 个 二 等 ）</p>
+				<p>- 学 院 的 先 进 个 人</p>
+				<p>- 全 国 互 联 网 +比 赛 铜 奖</p>
+			</div>
+		</li>
+		<li>
+		<h1 style="position: relative;top: 80px; left: 45%;">一部分项目截图展示</h1>
+			<div class="box" id="scroll1">
+			    <div>
+			        <span><img src="images/01.png" alt=""/></span>
+			        <span><img src="images/02.png" alt=""/></span>
+			        <span><img src="images/03.png" alt=""/></span>
+			        <span><img src="images/04.png" alt=""/></span>
+			        <span><img src="images/06.png" alt=""/></span>
+			        <span><img src="images/07.png" alt=""/></span>
+			        <span><img src="images/08.jpg" alt=""/></span>
+			        <span><img src="images/09.jpg" alt=""/></span>
+			        <span><img src="images/10.jpg" alt=""/></span>
+			        <span><img src="images/11.jpg" alt=""/></span>
+			        <span><img src="images/12.jpg" alt=""/></span>
+			        <span><img src="images/05.png" alt=""/></span>
+			    </div>
+			</div>
+			<script>
+			    var scroll = document.getElementById("scroll1");
+			    var ul = scroll.children[0];
+			    var num = 0; //控制左侧值  left
+			    var timer = null;  // 定时器
+			    var leader = 0,target = 0;
+			    timer = setInterval(autoPlay,1);
+			    function autoPlay() {
+			        target --;
+			//        num--;
+			        //console.log(num);
+			        target<=-3000 ? target = 0 : target;
+			        leader = leader + (target - leader) / 10;
+			        ul.style.left = leader + "px";
+			    }
+			    scroll.onmouseover = function() {  // 鼠标经过大盒子  停止定时器
+			        clearInterval(timer);
+			    }
+			    scroll.onmouseout = function() {
+			        timer = setInterval(autoPlay,20);  // 开启定时器
+			    }
+			</script>
+		</li>
+	</ul>
+	<ol id="content-btn">
+		<li style="border-left: none;">首页</li>
+		<li>关于</li>
+		<li id="fengge">技能</li>
+		<li>生活</li>
+		<li>作品</li>
+	</ol>
+</body>
+</html>
